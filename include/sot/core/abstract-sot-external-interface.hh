@@ -25,6 +25,8 @@
 #include <string>
 #include <sot/core/api.hh>
 
+#include <dynamic-graph/linear-algebra.h>
+
 namespace dynamicgraph {
   namespace sot {
 
@@ -62,6 +64,9 @@ namespace dynamicgraph {
       AbstractSotExternalInterface(){}
 
       virtual ~AbstractSotExternalInterface(){}
+
+      virtual dynamicgraph::Matrix getAttitude() = 0;
+      virtual bool getNewKF() = 0;
 
       virtual void setupSetSensors(std::map<std::string,SensorValues> &sensorsIn)=0;
       
